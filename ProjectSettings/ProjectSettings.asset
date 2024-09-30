@@ -4,7 +4,7 @@
 PlayerSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 26
-  productGUID: 8646fb53f92534143a9c9d6da67133f9
+  productGUID: 01b0e1918cb7fd5408e211383eec5a6e
   AndroidProfiler: 0
   AndroidFilterTouchesWhenObscured: 0
   AndroidEnableSustainedPerformanceMode: 0
@@ -13,7 +13,7 @@ PlayerSettings:
   useOnDemandResources: 0
   accelerometerFrequency: 60
   companyName: DefaultCompany
-  productName: Assignment2D
+  productName: Gunkan's Quest
   defaultCursor: {fileID: 0}
   cursorHotspot: {x: 0, y: 0}
   m_SplashScreenBackgroundColor: {r: 0.13725491, g: 0.12156863, b: 0.1254902, a: 1}
@@ -630,14 +630,14 @@ PlayerSettings:
   apiCompatibilityLevelPerPlatform: {}
   m_RenderingPath: 1
   m_MobileRenderingPath: 1
-  metroPackageName: Assignment2D
+  metroPackageName: Gunkan's Quest
   metroPackageVersion: 
   metroCertificatePath: 
   metroCertificatePassword: 
   metroCertificateSubject: 
   metroCertificateIssuer: 
   metroCertificateNotAfter: 0000000000000000
-  metroApplicationDescription: Assignment2D
+  metroApplicationDescription: Gunkan's Quest
   wsaImages: {}
   metroTileShortName: 
   metroTileShowName: 0
@@ -706,10 +706,10 @@ PlayerSettings:
   apiCompatibilityLevel: 6
   activeInputHandler: 0
   windowsGamepadBackendHint: 0
-  cloudProjectId: 9f76e810-84cb-4f24-8482-7f51ad73261b
+  cloudProjectId: 14bbf003-c0b2-4516-baba-b34be95bf602
   framebufferDepthMemorylessMode: 0
   qualitySettingsNames: []
-  projectName: Assignment2D
+  projectName: Gunkan's Quest 2024-09-30_20-48-10
   organizationId: ttenshi
   cloudEnabled: 0
   legacyClampBlendShapeWeights: 0
