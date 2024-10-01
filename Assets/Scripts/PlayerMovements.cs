@@ -4,11 +4,10 @@ using UnityEngine;
 
 public class PlayerMovements : MonoBehaviour
 {
-    public float speed = 5.0f;
-    public float jumpForce = 10.0f;
+    public float speed = 4.0f;
+    public float jumpForce = 6.0f;
 
     private Rigidbody2D rb = null;
-    private bool isJumping = false;
     private Vector3 spriteScale;
 
     private void Start()
@@ -17,12 +16,20 @@ public class PlayerMovements : MonoBehaviour
         spriteScale = transform.localScale;
     }
 
+    private bool CanJump()
+    {
+        if (rb.velocity.y == 0)
+        {
+            return true;
+        }
+        return false;
+    }
+
     private void Update()
     {
-        if (Input.GetButtonDown("Jump") && !isJumping)
+        if (Input.GetButtonDown("Jump") && CanJump())
         {
             rb.AddForce(Vector2.up * jumpForce, ForceMode2D.Impulse);
-            isJumping = true;
         }
     }
 
@@ -31,14 +38,6 @@ public class PlayerMovements : MonoBehaviour
         float moveX = Input.GetAxis("Horizontal");
         RotateSprite(moveX);
         rb.velocity = new Vector2(moveX * speed, rb.velocity.y);
-    }
-
-    private void OnCollisionEnter2D(Collision2D collision)
-    {
-        if (collision.gameObject.layer == LayerMask.NameToLayer("Ground"))
-        {
-            isJumping = false;
-        }
     }
 
     private void RotateSprite(float moveX)
