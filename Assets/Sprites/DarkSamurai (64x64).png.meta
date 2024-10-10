@@ -491,10 +491,10 @@ TextureImporter:
       name: DarkSamurai (64x64)_18
       rect:
         serializedVersion: 2
-        x: 136
-        y: 336
-        width: 30
-        height: 24
+        x: 135
+        y: 335
+        width: 57
+        height: 25
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -509,33 +509,12 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: DarkSamurai (64x64)_19
-      rect:
-        serializedVersion: 2
-        x: 180
-        y: 336
-        width: 11
-        height: 16
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: df38d709aea8bf2489d8c51509feae6a
-      internalID: -1042564653
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
       name: DarkSamurai (64x64)_20
       rect:
         serializedVersion: 2
         x: 200
         y: 336
-        width: 30
+        width: 58
         height: 24
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
@@ -546,27 +525,6 @@ TextureImporter:
       bones: []
       spriteID: 0b9e87a530862ff438f97ad6f34326f5
       internalID: 1698208891
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: DarkSamurai (64x64)_21
-      rect:
-        serializedVersion: 2
-        x: 250
-        y: 338
-        width: 6
-        height: 12
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 4bc9165f7e2344d44995dfc5fefa8280
-      internalID: 2130111800
       vertices: []
       indices: 
       edges: []
@@ -597,9 +555,9 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 83
-        y: 272
-        width: 25
-        height: 26
+        y: 271
+        width: 45
+        height: 27
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -614,33 +572,12 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: DarkSamurai (64x64)_24
-      rect:
-        serializedVersion: 2
-        x: 117
-        y: 274
-        width: 9
-        height: 19
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 53c5873c772d85e4795f2623b3e1af9f
-      internalID: -87932418
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
       name: DarkSamurai (64x64)_25
       rect:
         serializedVersion: 2
         x: 147
         y: 272
-        width: 25
+        width: 49
         height: 26
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
@@ -651,27 +588,6 @@ TextureImporter:
       bones: []
       spriteID: 4d929cf32db5e7e44b33cd9ddd7ced39
       internalID: 672639359
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: DarkSamurai (64x64)_26
-      rect:
-        serializedVersion: 2
-        x: 187
-        y: 274
-        width: 5
-        height: 17
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 292568d53553fd74a951fae0ebc23d05
-      internalID: 604717005
       vertices: []
       indices: 
       edges: []
@@ -1191,6 +1107,7 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
+      DarkSamurai (64x64)_0: -1751027368
       DarkSamurai (64x64)_1: -374754501
       DarkSamurai (64x64)_10: 839691795
       DarkSamurai (64x64)_11: 125307924
