@@ -27,6 +27,12 @@ public class PlayerLife : MonoBehaviour
         }
     }
 
+    public void OnPlayerDeadEnd()
+    {
+        SceneLoader sceneLoader = FindObjectOfType<SceneLoader>();
+        sceneLoader.LoadGameOver();
+    }
+
     void Die()
     {
         anim.SetFloat("Life", 0);

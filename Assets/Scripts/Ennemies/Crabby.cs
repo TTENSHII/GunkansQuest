@@ -2,13 +2,14 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Crabby : MonoBehaviour
+public class Crabby : MonoBehaviour, Ennemies
 {
+    public int maxHealth = 3;
     public int health = 3;
     public float speed = 5.0f;
     public int attackDamage = 1;
     public float attackRange = 1.8f;
-    public float attackCountdown = 4.0f; // 2s
+    public float attackCountdown = 0.5f;
 
     private bool isStunned = false;
     private bool canAttack = true;
@@ -18,6 +19,8 @@ public class Crabby : MonoBehaviour
     private PlayerMovements player = null;
     private PlayerLife playerLife = null;
 
+    [SerializeField] FloatingHealthBar healthBar = null;
+
     void Start()
     {
         animator = GetComponent<Animator>();
@@ -25,6 +28,8 @@ public class Crabby : MonoBehaviour
         rb.velocity = new Vector2(-speed, 0);
         player = FindObjectOfType<PlayerMovements>();
         playerLife = FindObjectOfType<PlayerLife>();
+        healthBar = GetComponentInChildren<FloatingHealthBar>();
+        healthBar.UpdateHealthBar(health, maxHealth);
     }
 
     private bool IsPlayerInRange()
@@ -67,6 +72,8 @@ public class Crabby : MonoBehaviour
         health -= damage;
         isStunned = true;
         rb.velocity = Vector2.zero;
+        healthBar.UpdateHealthBar(health, maxHealth);
+        animator.SetBool("IsTakingDamage", true);
         if (health <= 0)
         {
             animator.SetBool("IsDead", true);
@@ -91,10 +98,11 @@ public class Crabby : MonoBehaviour
     private void OnHitAnimationEnd()
     {
         isStunned = false;
+        animator.SetBool("IsTakingDamage", false);
         Move();
     }
 
-    protected void Move()
+    public void Move()
     {
         if (isStunned) return;
         if (player == null) return;
@@ -115,7 +123,7 @@ public class Crabby : MonoBehaviour
         canAttack = true;
     }
 
-    protected void Attack()
+    public void Attack()
     {
         if (isStunned) return;
         if (!canAttack) return;

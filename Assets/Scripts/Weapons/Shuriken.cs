@@ -7,10 +7,15 @@ public class Shuriken : MonoBehaviour
     private Animator animator;
     private Rigidbody2D rb;
 
+    public AudioClip shurikenSound;
+    private AudioSource audioSource;
+
     void Start()
     {
         animator = GetComponent<Animator>();
         rb = GetComponent<Rigidbody2D>();
+        audioSource = GetComponent<AudioSource>();
+        audioSource.PlayOneShot(shurikenSound);
     }
 
     void FixedUpdate()
@@ -21,9 +26,10 @@ public class Shuriken : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.CompareTag("Player"))
+        if (collision.CompareTag("Ennemie"))
         {
-            return;
+            Ennemies ennemie = collision.GetComponent<Ennemies>();
+            ennemie.ReceiveDamage(1);
         }
         else
         {

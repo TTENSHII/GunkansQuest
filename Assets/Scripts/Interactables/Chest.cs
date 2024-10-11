@@ -6,6 +6,9 @@ public class Chest : MonoBehaviour , IInteractable
 {
     public Sprite openSprite;
     public Sprite closedSprite;
+
+    public AudioClip openSound;
+    private AudioSource audioSource;
     
     private SpriteRenderer spriteRenderer;
     private bool isOpen = false;
@@ -22,6 +25,7 @@ public class Chest : MonoBehaviour , IInteractable
     {
         spriteRenderer = GetComponent<SpriteRenderer>(); 
         spriteRenderer.sprite = closedSprite;
+        audioSource = GetComponent<AudioSource>();
     }
 
     public bool CanInteract()
@@ -45,6 +49,7 @@ public class Chest : MonoBehaviour , IInteractable
         player.GetComponent<Inventory>().AddGold(gold);
         player.GetComponent<Inventory>().AddShuriken(shuriken);
         isOpen = true;
+        audioSource.PlayOneShot(openSound);
     }
 
     //when colliding with the player

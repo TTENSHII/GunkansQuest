@@ -12,6 +12,6 @@ public interface Ennemies
     public int GetAttackDamage();
     public void ReceiveDamage(int damage);
     public void Die();
-    protected void Move();
-    protected void Attack();
+    public void Move();
+    public void Attack();
 }
