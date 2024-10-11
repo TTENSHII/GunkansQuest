@@ -9,6 +9,7 @@ public class UIManager : MonoBehaviour
     public TextMeshProUGUI ToolTipText;
     public RawImage ToolTipBackground;
     public TextMeshProUGUI GoldText;
+    public TextMeshProUGUI ShurikenText;
 
     void Start()
     {
@@ -32,5 +33,10 @@ public class UIManager : MonoBehaviour
     {
         ToolTipText.text = text;
         ToolTipBackground.enabled = true;
+    }
+
+    public void UpdateShurikenText(int shuriken)
+    {
+        ShurikenText.text = shuriken.ToString();
     }
 }

@@ -8,7 +8,10 @@ public class PlayerAttacks : MonoBehaviour
     public AudioClip heavyAttackSound = null;
     private AudioSource audioSource = null;
 
+    public GameObject shuriKenPrefab = null;
+
     private Animator anim = null;
+    private Inventory playerInventory = null;
 
     public float attackCountDown = 0.2f;
     private float animationCountDown = 0.0f;
@@ -19,6 +22,7 @@ public class PlayerAttacks : MonoBehaviour
     {
         audioSource = GetComponent<AudioSource>();
         anim = GetComponent<Animator>();
+        playerInventory = GetComponent<Inventory>();
     }
 
     private void OnLightAttackAnimationEnd()
@@ -35,17 +39,8 @@ public class PlayerAttacks : MonoBehaviour
         isAttacking = false;
     }
 
-    private void Update()
+    private void CheckAttackTrigger()
     {
-        if (animationCountDown > 0)
-        {
-            animationCountDown -= Time.deltaTime;
-            return;
-        }
-        if (isAttacking)
-        {
-            return;
-        }
         if (Input.GetMouseButtonDown(0))
         {
             anim.SetBool("LightAttack", true);
@@ -58,5 +53,28 @@ public class PlayerAttacks : MonoBehaviour
             audioSource.PlayOneShot(heavyAttackSound);
             isAttacking = true;
         }
+        if (Input.GetKeyDown(KeyCode.Q) && playerInventory.GetShuriken() > 0)
+        {
+            GameObject shuriken = Instantiate(shuriKenPrefab, transform.position, Quaternion.identity);
+            Vector3 mousePosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+            Vector2 direction = (mousePosition - transform.position).normalized;
+            shuriken.GetComponent<Rigidbody2D>().velocity = direction * 25;
+            shuriken.transform.localScale = new Vector3(0.17799f, 0.17799f, 0.17799f);
+            playerInventory.RemoveShuriken(1);
+        }
+    }
+
+    private void Update()
+    {
+        if (animationCountDown > 0)
+        {
+            animationCountDown -= Time.deltaTime;
+            return;
+        }
+        if (isAttacking)
+        {
+            return;
+        }
+        CheckAttackTrigger();
     }
 }

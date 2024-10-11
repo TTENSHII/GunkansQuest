@@ -5,6 +5,7 @@ using UnityEngine;
 public class Inventory : MonoBehaviour
 {
     public int gold = 0;
+    public int shurikens = 5;
 
     private UIManager UIManager;
     private IInteractable CurentInteractable = null;
@@ -12,6 +13,8 @@ public class Inventory : MonoBehaviour
     void Start()
     {
         UIManager = GameObject.FindGameObjectWithTag("UiManager").GetComponent<UIManager>();
+        UIManager.UpdateGoldText(gold);
+        UIManager.UpdateShurikenText(shurikens);
     }
 
     void Update()
@@ -24,10 +27,32 @@ public class Inventory : MonoBehaviour
         }
     }
 
+    public int GetGold()
+    {
+        return gold;
+    }
+
+    public int GetShuriken()
+    {
+        return shurikens;
+    }
+
     public void AddGold(int amount)
     {
         gold += amount;
         UIManager.UpdateGoldText(gold);
+    }
+
+    public void AddShuriken(int amount)
+    {
+        shurikens += amount;
+        UIManager.UpdateShurikenText(shurikens);
+    }
+
+    public void RemoveShuriken(int amount)
+    {
+        shurikens -= amount;
+        UIManager.UpdateShurikenText(shurikens);
     }
 
     public void RemoveGold(int amount)

@@ -9,6 +9,9 @@ public class Chest : MonoBehaviour , IInteractable
     
     private SpriteRenderer spriteRenderer;
     private bool isOpen = false;
+
+    public int gold = 100;
+    public int shuriken = 2;
     
     public new InteractableType GetType()
     {
@@ -39,7 +42,8 @@ public class Chest : MonoBehaviour , IInteractable
     {
         spriteRenderer.sprite = openSprite;
         GameObject player = GameObject.FindGameObjectWithTag("Player");
-        player.GetComponent<Inventory>().AddGold(100);
+        player.GetComponent<Inventory>().AddGold(gold);
+        player.GetComponent<Inventory>().AddShuriken(shuriken);
         isOpen = true;
     }
 

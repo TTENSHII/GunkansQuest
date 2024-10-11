@@ -6,6 +6,7 @@ TagManager:
   tags:
   - Cloud
   - Interactable
+  - UiManager
   layers:
   - Default
   - TransparentFX
