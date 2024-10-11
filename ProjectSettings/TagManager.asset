@@ -7,6 +7,8 @@ TagManager:
   - Cloud
   - Interactable
   - UiManager
+  - Ennemie
+  - Ground
   layers:
   - Default
   - TransparentFX

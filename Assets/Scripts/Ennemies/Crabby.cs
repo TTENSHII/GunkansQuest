@@ -16,6 +16,7 @@ public class Crabby : MonoBehaviour
     private Animator animator = null;
     private Rigidbody2D rb = null;
     private PlayerMovements player = null;
+    private PlayerLife playerLife = null;
 
     void Start()
     {
@@ -23,6 +24,7 @@ public class Crabby : MonoBehaviour
         rb = GetComponent<Rigidbody2D>();
         rb.velocity = new Vector2(-speed, 0);
         player = FindObjectOfType<PlayerMovements>();
+        playerLife = FindObjectOfType<PlayerLife>();
     }
 
     private bool IsPlayerInRange()
@@ -120,5 +122,13 @@ public class Crabby : MonoBehaviour
         animator.SetBool("IsAttacking", true);
         canAttack = false;
         Invoke("ResetAttackPossibility", attackCountdown);
+    }
+
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        if (collision.gameObject.CompareTag("Player"))
+        {
+            playerLife.TakeDamage(attackDamage);
+        }
     }
 }

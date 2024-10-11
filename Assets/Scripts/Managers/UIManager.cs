@@ -10,6 +10,7 @@ public class UIManager : MonoBehaviour
     public RawImage ToolTipBackground;
     public TextMeshProUGUI GoldText;
     public TextMeshProUGUI ShurikenText;
+    public Image Life;
 
     void Start()
     {
@@ -21,6 +22,11 @@ public class UIManager : MonoBehaviour
     public void UpdateGoldText(int gold)
     {
         GoldText.text = gold.ToString();
+    }
+
+    public void UpdateLife(int life)
+    {
+        Life.rectTransform.sizeDelta = new Vector2(life * 100, Life.rectTransform.sizeDelta.y);
     }
 
     public void StopToolTip()

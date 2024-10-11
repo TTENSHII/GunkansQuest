@@ -10,7 +10,6 @@ public class GameManager : MonoBehaviour
     private int coins = 0;
     private int lives = 3;
 
-    // Start is called before the first frame update
     void Start()
     {
         if (instance == null)
@@ -23,29 +22,8 @@ public class GameManager : MonoBehaviour
         }
     }
 
-    // Update is called once per frame
-    void Update()
+    public void OnPlayerDeadEnd()
     {
-        
-    }
-
-    public void AddCoin()
-    {
-        coins++;
-    }
-
-    public int GetCoins()
-    {
-        return coins;
-    }
-
-    public void RemoveLife()
-    {
-        lives--;
-    }
-
-    public void AddLife()
-    {
-        lives++;
+        //go to game over screen
     }
 }
