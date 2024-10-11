@@ -15,6 +15,7 @@ public class PlayerAttacks : MonoBehaviour
 
     public float attackCountDown = 0.2f;
     private float animationCountDown = 0.0f;
+    private float attackForce = 30.0f;
 
     private bool isAttacking = false;
 
@@ -58,7 +59,7 @@ public class PlayerAttacks : MonoBehaviour
             GameObject shuriken = Instantiate(shuriKenPrefab, transform.position, Quaternion.identity);
             Vector3 mousePosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
             Vector2 direction = (mousePosition - transform.position).normalized;
-            shuriken.GetComponent<Rigidbody2D>().velocity = direction * 25;
+            shuriken.GetComponent<Rigidbody2D>().velocity = direction * attackForce;
             shuriken.transform.localScale = new Vector3(0.17799f, 0.17799f, 0.17799f);
             playerInventory.RemoveShuriken(1);
         }

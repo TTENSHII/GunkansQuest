@@ -19,15 +19,15 @@ public class Shuriken : MonoBehaviour
         animator.SetFloat("Speed", speed);
     }
 
-    private void OnCollisionEnter2D(Collision2D collision)
+    private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.gameObject.CompareTag("Player"))
+        if (collision.CompareTag("Player"))
         {
             return;
         }
         else
         {
-            Destroy(gameObject, 1);
+            Destroy(gameObject);
         }
     }
 }

@@ -4,8 +4,8 @@ using UnityEngine;
 
 public class Cloud : MonoBehaviour
 {
-    public int spawnX = 16;
-    public int minX = -70;
+    public int spawnX = 35;
+    public int minX = -46;
 
     public float minSpeed = 0.5f;
     public float maxSpeed = 2.0f;
