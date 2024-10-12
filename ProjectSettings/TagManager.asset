@@ -9,6 +9,7 @@ TagManager:
   - UiManager
   - Ennemie
   - Ground
+  - Enemy
   layers:
   - Default
   - TransparentFX

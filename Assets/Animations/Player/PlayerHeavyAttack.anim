@@ -82,7 +82,7 @@ AnimationClip:
   - time: 0.25
     functionName: OnHeavyAttackAnimationEnd
     data: 
-    objectReferenceParameter: {fileID: 11500000, guid: 72854a35bdd8e69409c66c7740f59baf, type: 3}
+    objectReferenceParameter: {fileID: 11500000, guid: d624da8b23698ac40bd797dc10a33ce8, type: 3}
     floatParameter: 0
     intParameter: 0
     messageOptions: 0
