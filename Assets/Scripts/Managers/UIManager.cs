@@ -6,17 +6,20 @@ using UnityEngine.UI;
 
 public class UIManager : MonoBehaviour
 {
-    public TextMeshProUGUI ToolTipText;
-    public RawImage ToolTipBackground;
-    public TextMeshProUGUI GoldText;
-    public TextMeshProUGUI ShurikenText;
-    public Image Life;
+    public TextMeshProUGUI ToolTipText = null;
+    public RawImage ToolTipBackground = null;
+    public TextMeshProUGUI GoldText = null;
+    public TextMeshProUGUI ShurikenText = null;
+    public Image Life = null;
 
     void Start()
     {
         ToolTipText.text = "";
         GoldText.text = "0";
-        ToolTipBackground.enabled = false;
+        if (ToolTipBackground != null)
+        {
+            ToolTipBackground.enabled = false;
+        }
     }
 
     public void UpdateGoldText(int gold)
@@ -32,13 +35,19 @@ public class UIManager : MonoBehaviour
     public void StopToolTip()
     {
         ToolTipText.text = "";
-        ToolTipBackground.enabled = false;
+        if (ToolTipBackground != null)
+        {
+            ToolTipBackground.enabled = false;
+        }
     }
 
     public void SetToolTipText(string text)
     {
         ToolTipText.text = text;
-        ToolTipBackground.enabled = true;
+        if (ToolTipBackground != null)
+        {
+            ToolTipBackground.enabled = true;
+        }
     }
 
     public void UpdateShurikenText(int shuriken)
