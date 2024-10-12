@@ -8063,7 +8063,7 @@ GameObject:
   - component: {fileID: 1496432194}
   m_Layer: 0
   m_Name: PinkStar
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -8222,7 +8222,7 @@ Transform:
   m_GameObject: {fileID: 1496432188}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 24.21, y: -19.64, z: 0.7408162}
+  m_LocalPosition: {x: 29.52, y: -18.61, z: 0.7408162}
   m_LocalScale: {x: 2.537559, y: 2.537559, z: 2.537559}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -34459,7 +34459,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7140785951894424027, guid: 7c8721b33f61d4747b36e1fced0c31f0, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 1.6877708
+      value: 1.6
       objectReference: {fileID: 0}
     - target: {fileID: 7140785951894424027, guid: 7c8721b33f61d4747b36e1fced0c31f0, type: 3}
       propertyPath: m_LocalPosition.y

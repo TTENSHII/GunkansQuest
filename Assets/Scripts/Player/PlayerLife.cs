@@ -36,6 +36,9 @@ public class PlayerLife : MonoBehaviour
     void Die()
     {
         anim.SetFloat("Life", 0);
+        Destroy(GetComponent<PlayerMovements>());
+        //freeze the player
+        Destroy(GetComponent<Rigidbody2D>());
     }
 
     public void IncreaseLife(int amount)
