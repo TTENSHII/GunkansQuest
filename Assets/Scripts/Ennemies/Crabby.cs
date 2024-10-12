@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Crabby : MonoBehaviour, Ennemies
+public class Crabby : MonoBehaviour, Enemies
 {
     public int maxHealth = 3;
     public int health = 3;

@@ -26,10 +26,10 @@ public class Shuriken : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.CompareTag("Ennemie"))
+        if (collision.CompareTag("Enemy"))
         {
-            Ennemies ennemie = collision.GetComponent<Ennemies>();
-            ennemie.ReceiveDamage(1);
+            Enemies Enemy = collision.GetComponent<Enemies>();
+            Enemy.ReceiveDamage(1);
         }
         else
         {

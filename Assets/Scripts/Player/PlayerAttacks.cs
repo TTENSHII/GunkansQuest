@@ -40,6 +40,31 @@ public class PlayerAttacks : MonoBehaviour
         isAttacking = false;
     }
 
+    private void CheckAttackHitbox(int damage)
+    {
+        bool isFacingRight = transform.localScale.x > 0;
+        Vector3 hitboxPosition = Vector3.zero;
+    
+        if (isFacingRight)
+        {
+            hitboxPosition = transform.position + transform.right * 0.75f;
+        }
+        else 
+        {
+            hitboxPosition = transform.position - transform.right * 0.75f;
+        }
+    
+        Collider2D[] hitEnemies = Physics2D.OverlapCircleAll(hitboxPosition, 0.5f);
+
+        foreach (Collider2D enemy in hitEnemies)
+        {
+            if (enemy.CompareTag("Enemy"))
+            {
+                enemy.GetComponent<Enemies>().ReceiveDamage(damage);
+            }
+        }
+    }
+
     private void CheckAttackTrigger()
     {
         if (Input.GetMouseButtonDown(0))
@@ -47,12 +72,14 @@ public class PlayerAttacks : MonoBehaviour
             anim.SetBool("LightAttack", true);
             audioSource.PlayOneShot(lightAttackSound);
             isAttacking = true;
+            CheckAttackHitbox(1);
         }
         if (Input.GetMouseButtonDown(1))
         {
             anim.SetBool("HeavyAttack", true);
             audioSource.PlayOneShot(heavyAttackSound);
             isAttacking = true;
+            CheckAttackHitbox(2);
         }
         if (Input.GetKeyDown(KeyCode.Q) && playerInventory.GetShuriken() > 0)
         {

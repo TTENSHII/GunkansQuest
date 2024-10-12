@@ -7,7 +7,7 @@ public enum EnnnemiesType
     Crabby
 }
 
-public interface Ennemies
+public interface Enemies
 {
     public int GetAttackDamage();
     public void ReceiveDamage(int damage);
