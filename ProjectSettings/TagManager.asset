@@ -10,6 +10,8 @@ TagManager:
   - Ennemie
   - Ground
   - Enemy
+  - Walls
+  - Weapons
   layers:
   - Default
   - TransparentFX

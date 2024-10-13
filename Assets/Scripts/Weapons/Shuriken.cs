@@ -31,9 +31,6 @@ public class Shuriken : MonoBehaviour
             Enemies Enemy = collision.GetComponent<Enemies>();
             Enemy.ReceiveDamage(1);
         }
-        else
-        {
-            Destroy(gameObject);
-        }
+        Destroy(gameObject);
     }
 }

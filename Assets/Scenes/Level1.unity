@@ -8834,6 +8834,26 @@ Tilemap:
   m_GameObject: {fileID: 1697058033}
   m_Enabled: 1
   m_Tiles:
+  - first: {x: 47, y: -12, z: 0}
+    second:
+      serializedVersion: 2
+      m_TileIndex: 4
+      m_TileSpriteIndex: 4
+      m_TileMatrixIndex: 0
+      m_TileColorIndex: 0
+      m_TileObjectToInstantiateIndex: 65535
+      dummyAlignment: 0
+      m_AllTileFlags: 1073741825
+  - first: {x: 48, y: -12, z: 0}
+    second:
+      serializedVersion: 2
+      m_TileIndex: 5
+      m_TileSpriteIndex: 5
+      m_TileMatrixIndex: 0
+      m_TileColorIndex: 0
+      m_TileObjectToInstantiateIndex: 65535
+      dummyAlignment: 0
+      m_AllTileFlags: 1073741825
   - first: {x: 43, y: -11, z: 0}
     second:
       serializedVersion: 2
@@ -8859,6 +8879,26 @@ Tilemap:
       serializedVersion: 2
       m_TileIndex: 0
       m_TileSpriteIndex: 0
+      m_TileMatrixIndex: 0
+      m_TileColorIndex: 0
+      m_TileObjectToInstantiateIndex: 65535
+      dummyAlignment: 0
+      m_AllTileFlags: 1073741825
+  - first: {x: 26, y: -10, z: 0}
+    second:
+      serializedVersion: 2
+      m_TileIndex: 4
+      m_TileSpriteIndex: 4
+      m_TileMatrixIndex: 0
+      m_TileColorIndex: 0
+      m_TileObjectToInstantiateIndex: 65535
+      dummyAlignment: 0
+      m_AllTileFlags: 1073741825
+  - first: {x: 27, y: -10, z: 0}
+    second:
+      serializedVersion: 2
+      m_TileIndex: 4
+      m_TileSpriteIndex: 4
       m_TileMatrixIndex: 0
       m_TileColorIndex: 0
       m_TileObjectToInstantiateIndex: 65535
@@ -8944,6 +8984,10 @@ Tilemap:
     m_Data: {fileID: 11400000, guid: 7a780f34d5ca6474da80d374af165722, type: 2}
   - m_RefCount: 1
     m_Data: {fileID: 11400000, guid: 7d374bf5d4da21347a38cce74883540f, type: 2}
+  - m_RefCount: 3
+    m_Data: {fileID: 11400000, guid: da3215d4055929440b7e8e567a9e0c8e, type: 2}
+  - m_RefCount: 1
+    m_Data: {fileID: 11400000, guid: 15e90095f6f25094696d4fc4a5922c58, type: 2}
   m_TileSpriteArray:
   - m_RefCount: 5
     m_Data: {fileID: -30298240, guid: cfd7cfec7af366e4faf87984440ce3ed, type: 3}
@@ -8953,8 +8997,12 @@ Tilemap:
     m_Data: {fileID: 21300000, guid: 6959c0ac9ae93df468876114a06daef4, type: 3}
   - m_RefCount: 1
     m_Data: {fileID: 21300000, guid: 668532867b932bb419a945df2f33fb30, type: 3}
+  - m_RefCount: 3
+    m_Data: {fileID: 963116830, guid: 1553242b4225cb64db261ddd150928a4, type: 3}
+  - m_RefCount: 1
+    m_Data: {fileID: 1435496862, guid: 1553242b4225cb64db261ddd150928a4, type: 3}
   m_TileMatrixArray:
-  - m_RefCount: 10
+  - m_RefCount: 14
     m_Data:
       e00: 1
       e01: 0
@@ -8973,13 +9021,13 @@ Tilemap:
       e32: 0
       e33: 1
   m_TileColorArray:
-  - m_RefCount: 10
+  - m_RefCount: 14
     m_Data: {r: 1, g: 1, b: 1, a: 1}
   m_TileObjectToInstantiateArray: []
   m_AnimationFrameRate: 1
   m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_Origin: {x: -3, y: -11, z: 0}
-  m_Size: {x: 71, y: 11, z: 1}
+  m_Origin: {x: -3, y: -12, z: 0}
+  m_Size: {x: 71, y: 12, z: 1}
   m_TileAnchor: {x: 0.5, y: 0.5, z: 0}
   m_TileOrientation: 0
   m_TileOrientationMatrix:
@@ -10185,7 +10233,7 @@ GameObject:
   - component: {fileID: 1930758315}
   m_Layer: 11
   m_Name: Terrain
-  m_TagString: Untagged
+  m_TagString: Walls
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -34399,7 +34447,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1660908703663563361, guid: 3d43dc40e74b61549b0b52ebd58d5fcd, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 21.534832
+      value: 19.6
       objectReference: {fileID: 0}
     - target: {fileID: 1660908703663563361, guid: 3d43dc40e74b61549b0b52ebd58d5fcd, type: 3}
       propertyPath: m_LocalPosition.y
@@ -34489,7 +34537,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7140785951894424027, guid: 7c8721b33f61d4747b36e1fced0c31f0, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 1.6
+      value: -0.05
       objectReference: {fileID: 0}
     - target: {fileID: 7140785951894424027, guid: 7c8721b33f61d4747b36e1fced0c31f0, type: 3}
       propertyPath: m_LocalPosition.y
