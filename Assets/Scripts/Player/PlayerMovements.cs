@@ -12,7 +12,6 @@ public class PlayerMovements : MonoBehaviour
     private Animator anim = null;
 
     private bool isGrounded = false;
-
     private bool isJumping = false;
 
     private void Start()
@@ -24,7 +23,7 @@ public class PlayerMovements : MonoBehaviour
 
     private bool CanJump()
     {
-        if (isGrounded)
+        if (rb.velocity.y <= 0.001f && rb.velocity.y >= -0.001f && isGrounded)
         {
             return true;
         }
