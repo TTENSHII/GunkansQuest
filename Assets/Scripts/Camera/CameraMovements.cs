@@ -4,17 +4,15 @@ using UnityEngine;
 
 public class CameraMovements : MonoBehaviour
 {
-    private GameObject player;
+    private GameObject player = null;
     private float yOffset = 2.0f;
 
-    // Start is called before the first frame update
-    void Start()
+    private void Start()
     {
         player = GameObject.FindGameObjectWithTag("Player");
     }
 
-    // Update is called once per frame
-    void Update()
+    private void Update()
     {
         if (player != null)
         {

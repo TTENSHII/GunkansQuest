@@ -4,8 +4,8 @@ using UnityEngine;
 
 public class PlayerMovements : MonoBehaviour
 {
-    [field: SerializeField] public float speed { get; private set; } = 4.0f;
-    [field: SerializeField] public float jumpForce { get; private set; } = 25.0f;
+    [SerializeField] private float speed = 4.0f;
+    [SerializeField] private float jumpForce = 25.0f;
 
     private Animator anim = null;
     private Rigidbody2D rb = null;

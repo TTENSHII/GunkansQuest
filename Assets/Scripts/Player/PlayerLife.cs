@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class PlayerLife : MonoBehaviour
 {
-    [field: SerializeField] public int life { get; private set; } = 5;
+    [SerializeField] private int life = 5;
 
     private UIManager UIManager = null;
     private Animator anim = null;

@@ -51,13 +51,4 @@ public class Chest : MonoBehaviour , IInteractable
         isOpen = true;
         audioSource.PlayOneShot(openSound);
     }
-
-    //when colliding with the player
-    private void OnTriggerEnter2D(Collider2D collision)
-    {
-        // if (collision.CompareTag("Player"))
-        // {
-            
-        // }
-    }
 }

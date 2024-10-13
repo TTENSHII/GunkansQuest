@@ -4,13 +4,13 @@ using UnityEngine;
 
 public class Shuriken : MonoBehaviour
 {
-    private Animator animator;
-    private Rigidbody2D rb;
+    [SerializeField] private AudioClip shurikenSound = null;
 
-    public AudioClip shurikenSound;
-    private AudioSource audioSource;
+    private Rigidbody2D rb = null;
+    private Animator animator = null;
+    private AudioSource audioSource = null;
 
-    void Start()
+    private void Start()
     {
         animator = GetComponent<Animator>();
         rb = GetComponent<Rigidbody2D>();
@@ -18,7 +18,7 @@ public class Shuriken : MonoBehaviour
         audioSource.PlayOneShot(shurikenSound);
     }
 
-    void FixedUpdate()
+    private void FixedUpdate()
     {
         float speed = rb.velocity.x;
         animator.SetFloat("Speed", speed);

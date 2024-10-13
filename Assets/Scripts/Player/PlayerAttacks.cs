@@ -9,8 +9,9 @@ public class PlayerAttacks : MonoBehaviour
     [SerializeField] private GameObject shuriKenPrefab = null;
     [SerializeField] private AudioSource audioSource = null;
 
-    [field: SerializeField] public float shurikenThrowForce { get; private set; } = 30.0f;
-    [field: SerializeField] public float heavyAttackCooldown { get; private set; } = 1.0f;
+    [SerializeField] private float heavyAttackCooldown = 1.0f;
+    [SerializeField] private float lightAttackCooldown = 0.3f;
+    [SerializeField] private float shurikenThrowForce = 30.0f;
 
     private Animator anim = null;
     private Inventory playerInventory = null;
@@ -31,7 +32,7 @@ public class PlayerAttacks : MonoBehaviour
     private void OnLightAttackAnimationEnd()
     {
         anim.SetBool("LightAttack", false);
-        Invoke("OnAttackCoolDownEnd", 0.2f);
+        Invoke("OnAttackCoolDownEnd", lightAttackCooldown);
     }
 
     private void OnHeavyAttackAnimationEnd()

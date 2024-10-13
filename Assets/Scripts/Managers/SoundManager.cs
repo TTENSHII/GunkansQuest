@@ -4,8 +4,8 @@ using UnityEngine;
 
 public class SoundManager : MonoBehaviour
 {
-    public AudioClip levelMusic = null;
-    
+    [SerializeField] private AudioClip levelMusic = null;
+
     private AudioSource audioSource = null;
 
     private void Start()

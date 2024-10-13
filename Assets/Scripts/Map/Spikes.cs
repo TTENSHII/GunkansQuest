@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Spikes : MonoBehaviour
 {
-    public int damage = 1;
+    [SerializeField] private int damage = 1;
 
     private AudioSource audioSource = null;
 
