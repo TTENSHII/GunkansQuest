@@ -4,72 +4,77 @@ using UnityEngine;
 
 public class Inventory : MonoBehaviour
 {
-    public int gold = 0;
-    public int shurikens = 5;
+    [field: SerializeField] public int gold { get; private set; } = 0;
+    [field: SerializeField] public int shurikens { get; private set; } = 0;
 
-    private UIManager UIManager;
-    private IInteractable CurentInteractable = null;
+    private UIManager UIManager = null;
+    private IInteractable currentInteractable = null;
 
     void Start()
     {
-        UIManager = GameObject.FindGameObjectWithTag("UiManager").GetComponent<UIManager>();
-        UIManager.UpdateGoldText(gold);
-        UIManager.UpdateShurikenText(shurikens);
+        UIManager = GameObject.FindGameObjectWithTag("UIManager").GetComponent<UIManager>();
+        UpdateUI();
     }
 
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.E) && CurentInteractable != null)
+        if (Input.GetKeyDown(KeyCode.E) && currentInteractable != null)
         {
-            CurentInteractable.Interact();
-            CurentInteractable = null;
+            currentInteractable.Interact();
+            currentInteractable = null;
             UIManager.StopToolTip();
         }
     }
 
-    public int GetGold()
+    private void UpdateGoldText() 
     {
-        return gold;
+        UIManager.UpdateGoldText(gold);
     }
 
-    public int GetShuriken()
+    private void UpdateShurikenText()
     {
-        return shurikens;
+        UIManager.UpdateShurikenText(shurikens);
+    }
+
+    private void UpdateUI()
+    {
+        UIManager.UpdateGoldText(gold);
+        UIManager.UpdateShurikenText(shurikens);
     }
 
     public void AddGold(int amount)
     {
         gold += amount;
-        UIManager.UpdateGoldText(gold);
+        UpdateGoldText();
+    }
+    
+    public void RemoveGold(int amount)
+    {
+        gold -= amount;
+        UpdateGoldText();
     }
 
     public void AddShuriken(int amount)
     {
         shurikens += amount;
-        UIManager.UpdateShurikenText(shurikens);
+        UpdateShurikenText();
     }
 
     public void RemoveShuriken(int amount)
     {
         shurikens -= amount;
-        UIManager.UpdateShurikenText(shurikens);
-    }
-
-    public void RemoveGold(int amount)
-    {
-        gold -= amount;
-        UIManager.UpdateGoldText(gold);
+        UpdateShurikenText();
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.CompareTag("Interactable"))
         {
-            IInteractable Interactable = collision.GetComponent<IInteractable>();
-            if (Interactable.CanInteract())
+            IInteractable interactable = collision.GetComponent<IInteractable>();
+            if (interactable.CanInteract() == true)
             {
-                UIManager.SetToolTipText(Interactable.GetInteractText());
-                CurentInteractable = Interactable;
+                UIManager.SetToolTipText(interactable.GetInteractText());
+                currentInteractable = interactable;
             }
         }
     }
@@ -79,7 +84,7 @@ public class Inventory : MonoBehaviour
         if (collision.CompareTag("Interactable"))
         {
             UIManager.StopToolTip();
-            CurentInteractable = null;
+            currentInteractable = null;
         }
     }
 }

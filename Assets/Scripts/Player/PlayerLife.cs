@@ -4,14 +4,14 @@ using UnityEngine;
 
 public class PlayerLife : MonoBehaviour
 {
-    public int life = 5;
+    [field: SerializeField] public int life { get; private set; } = 5;
 
-    private UIManager UIManager;
+    private UIManager UIManager = null;
     private Animator anim = null;
 
-    void Start()
+    private void Start()
     {
-        UIManager = GameObject.FindGameObjectWithTag("UiManager").GetComponent<UIManager>();
+        UIManager = GameObject.FindGameObjectWithTag("UIManager").GetComponent<UIManager>();
         anim = GetComponent<Animator>();
         UIManager.UpdateLife(life);
     }
@@ -33,12 +33,11 @@ public class PlayerLife : MonoBehaviour
         sceneLoader.LoadGameOver();
     }
 
-    void Die()
+    private void Die()
     {
         anim.SetFloat("Life", 0);
         Destroy(GetComponent<PlayerMovements>());
-        //freeze the player
-        Destroy(GetComponent<Rigidbody2D>());
+        GetComponent<Rigidbody2D>().velocity = Vector2.zero;
     }
 
     public void IncreaseLife(int amount)

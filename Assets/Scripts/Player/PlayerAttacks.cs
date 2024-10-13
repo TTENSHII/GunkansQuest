@@ -4,20 +4,17 @@ using UnityEngine;
 
 public class PlayerAttacks : MonoBehaviour
 {
-    public AudioClip lightAttackSound = null;
-    public AudioClip heavyAttackSound = null;
-    private AudioSource audioSource = null;
+    [SerializeField] private AudioClip lightAttackSound = null;
+    [SerializeField] private AudioClip heavyAttackSound = null;
+    [SerializeField] private GameObject shuriKenPrefab = null;
+    [SerializeField] private AudioSource audioSource = null;
 
-    public GameObject shuriKenPrefab = null;
+    [field: SerializeField] public float shurikenThrowForce { get; private set; } = 30.0f;
+    [field: SerializeField] public float heavyAttackCooldown { get; private set; } = 1.0f;
 
     private Animator anim = null;
     private Inventory playerInventory = null;
-
-    public float attackCountDown = 0.2f;
-    private float animationCountDown = 0.0f;
-    private float attackForce = 30.0f;
-
-    private bool isAttacking = false;
+    private bool canSwordAttack = true;
 
     private void Start()
     {
@@ -26,18 +23,21 @@ public class PlayerAttacks : MonoBehaviour
         playerInventory = GetComponent<Inventory>();
     }
 
+    private void OnAttackCoolDownEnd()
+    {
+        canSwordAttack = true;
+    }
+
     private void OnLightAttackAnimationEnd()
     {
         anim.SetBool("LightAttack", false);
-        animationCountDown = attackCountDown;
-        isAttacking = false;
+        Invoke("OnAttackCoolDownEnd", 0.2f);
     }
 
     private void OnHeavyAttackAnimationEnd()
     {
         anim.SetBool("HeavyAttack", false);
-        animationCountDown = attackCountDown;
-        isAttacking = false;
+        Invoke("OnAttackCoolDownEnd", heavyAttackCooldown);
     }
 
     private void CheckAttackHitbox(int damage)
@@ -64,29 +64,36 @@ public class PlayerAttacks : MonoBehaviour
             }
         }
     }
-
-    private void CheckAttackTrigger()
+    
+    private void CheckSwordAttackTrigger()
     {
+        if (!canSwordAttack) return;
+
         if (Input.GetMouseButtonDown(0))
         {
             anim.SetBool("LightAttack", true);
             audioSource.PlayOneShot(lightAttackSound);
-            isAttacking = true;
+            canSwordAttack = false;
             CheckAttackHitbox(1);
+            return;
         }
         if (Input.GetMouseButtonDown(1))
         {
             anim.SetBool("HeavyAttack", true);
             audioSource.PlayOneShot(heavyAttackSound);
-            isAttacking = true;
+            canSwordAttack = false;
             CheckAttackHitbox(2);
         }
-        if (Input.GetKeyDown(KeyCode.Q) && playerInventory.GetShuriken() > 0)
+    }
+
+    private void CheckShurikenThrowTrigger()
+    {
+        if (Input.GetKeyDown(KeyCode.Q) && playerInventory.shurikens > 0)
         {
             GameObject shuriken = Instantiate(shuriKenPrefab, transform.position, Quaternion.identity);
             Vector3 mousePosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
             Vector2 direction = (mousePosition - transform.position).normalized;
-            shuriken.GetComponent<Rigidbody2D>().velocity = direction * attackForce;
+            shuriken.GetComponent<Rigidbody2D>().velocity = direction * shurikenThrowForce;
             shuriken.transform.localScale = new Vector3(0.17799f, 0.17799f, 0.17799f);
             playerInventory.RemoveShuriken(1);
         }
@@ -94,15 +101,7 @@ public class PlayerAttacks : MonoBehaviour
 
     private void Update()
     {
-        if (animationCountDown > 0)
-        {
-            animationCountDown -= Time.deltaTime;
-            return;
-        }
-        if (isAttacking)
-        {
-            return;
-        }
-        CheckAttackTrigger();
+        CheckSwordAttackTrigger();
+        CheckShurikenThrowTrigger();
     }
 }

@@ -6,12 +6,12 @@ TagManager:
   tags:
   - Cloud
   - Interactable
-  - UiManager
   - Ennemie
   - Ground
   - Enemy
   - Walls
   - Weapons
+  - UIManager
   layers:
   - Default
   - TransparentFX
