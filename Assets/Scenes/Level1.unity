@@ -33902,6 +33902,10 @@ PrefabInstance:
       propertyPath: jumpForce
       value: 20
       objectReference: {fileID: 0}
+    - target: {fileID: 2650549131448412922, guid: 3d43dc40e74b61549b0b52ebd58d5fcd, type: 3}
+      propertyPath: <shurikens>k__BackingField
+      value: 5
+      objectReference: {fileID: 0}
     - target: {fileID: 4676847521935457546, guid: 3d43dc40e74b61549b0b52ebd58d5fcd, type: 3}
       propertyPath: m_Name
       value: Player
