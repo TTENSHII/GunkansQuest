@@ -12,6 +12,7 @@ TagManager:
   - Walls
   - Weapons
   - UIManager
+  - Collectible
   layers:
   - Default
   - TransparentFX

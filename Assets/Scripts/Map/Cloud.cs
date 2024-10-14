@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Cloud : MonoBehaviour
 {
-    [SerializeField] private int spawnX = 35;
+    [SerializeField] private int spawnX = 81;
     [SerializeField] private int minX = -46;
     [SerializeField] private float minSpeed = 0.5f;
     [SerializeField] private float maxSpeed = 2.0f;

@@ -5,6 +5,7 @@ using UnityEngine;
 public class PlayerLife : MonoBehaviour
 {
     [SerializeField] private int life = 5;
+    [SerializeField] private int maxLife = 5;
 
     private UIManager UIManager = null;
     private Animator anim = null;
@@ -43,6 +44,10 @@ public class PlayerLife : MonoBehaviour
     public void IncreaseLife(int amount)
     {
         life += amount;
+        if (life > maxLife)
+        {
+            life = maxLife;
+        }
         UIManager.UpdateLife(life);
     }
 }

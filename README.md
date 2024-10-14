@@ -1,4 +1,9 @@
-Samurai: https://aimmaga.itch.io/darksamurai
-Other: https://pixelfrog-assets.itch.io/treasure-hunters
-Sounds: https://kenney.nl/assets/impact-sounds
-Musics: One Man Symphony
+2D assets:
+
+-   https://pixelfrog-assets.itch.io/treasure-hunters
+-   https://pixelfrog-assets.itch.io/pirate-bomb
+-   https://aimmaga.itch.io/darksamurai
+
+Sounds & Musics
+-   https://kenney.nl/assets/impact-sounds
+-   One Man Symphony

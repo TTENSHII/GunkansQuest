@@ -77,6 +77,11 @@ public class Inventory : MonoBehaviour
                 currentInteractable = interactable;
             }
         }
+        else if (collision.CompareTag("Collectible"))
+        {
+            Collectibles collectible = collision.GetComponent<Collectibles>();
+            collectible.Pickup(this);
+        }
     }
 
     private void OnTriggerExit2D(Collider2D collision)

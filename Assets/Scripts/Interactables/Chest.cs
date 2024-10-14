@@ -9,18 +9,13 @@ public class Chest : MonoBehaviour , IInteractable
 
     public AudioClip openSound;
     private AudioSource audioSource;
-    
+
     private SpriteRenderer spriteRenderer;
     private bool isOpen = false;
 
     public int gold = 100;
     public int shuriken = 2;
     
-    public new InteractableType GetType()
-    {
-        return InteractableType.Chest;
-    }
-
     private void Start()
     {
         spriteRenderer = GetComponent<SpriteRenderer>(); 
