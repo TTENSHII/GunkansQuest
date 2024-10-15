@@ -4,12 +4,12 @@ using UnityEngine;
 
 public abstract class Enemies : MonoBehaviour
 {
-    protected int maxHealth = 3;
-    protected int health = 3;
-    protected int attackDamage = 1;
-    protected float speed = 5.0f;
-    protected float attackRange = 1.8f;
-    protected float attackCountdown = 0.5f;
+    [SerializeField] protected int maxHealth = 3;
+    [SerializeField] protected int health = 3;
+    [SerializeField] protected int attackDamage = 1;
+    [SerializeField] protected float speed = 5.0f;
+    [SerializeField] protected float attackRange = 1.8f;
+    [SerializeField] protected float attackCountdown = 0.5f;
 
     protected bool isStunned = false;
     protected bool canAttack = true;
@@ -67,7 +67,7 @@ public abstract class Enemies : MonoBehaviour
         Invoke("ResetAttackPossibility", attackCountdown);
     }
 
-    protected void FixedUpdate()
+    protected virtual void FixedUpdate()
     {
         if (health <= 0)
         {

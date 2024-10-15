@@ -19,6 +19,7 @@ public class PlayerLife : MonoBehaviour
 
     public void TakeDamage(int damage)
     {
+        Debug.Log("Player took " + damage + " damage");
         life -= damage;
         anim.SetTrigger("TakeDamage");
         UIManager.UpdateLife(life);
