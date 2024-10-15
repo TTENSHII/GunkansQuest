@@ -58,7 +58,7 @@ public abstract class Enemies : MonoBehaviour
         canAttack = true;
     }
 
-    protected void Attack()
+    protected virtual void Attack()
     {
         if (isStunned) return;
         if (!canAttack) return;
