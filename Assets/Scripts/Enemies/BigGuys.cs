@@ -6,22 +6,22 @@ public class BigGuys : Enemies
 {
     [SerializeField] private GameObject bombPrefab = null;
     [SerializeField] private float guysScale = 1.617497f;
-    [SerializeField] private float bombThrowForce = 25.0f;
+    [SerializeField] private float bombThrowForce = 10.0f;
 
     protected void ThrowBomb()
     {
-        if (player == null) return;
-        GameObject shuriken = Instantiate(bombPrefab, transform.position, Quaternion.identity);
-        Vector3 mousePosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
-        Vector2 direction = (mousePosition - transform.position).normalized;
-        shuriken.GetComponent<Rigidbody2D>().velocity = direction * bombThrowForce;
+        GameObject bomb = Instantiate(bombPrefab, transform.position, Quaternion.identity);
+        Vector2 direction = (player.transform.position - transform.position).normalized;
+        direction = new Vector2(direction.x, direction.y + 0.2f);
+        bomb.GetComponent<Rigidbody2D>().velocity = direction * bombThrowForce;
     }
 
     protected override void Attack()
     {
-        Debug.Log("BigGuys Attack");
         if (isStunned) return;
         if (!canAttack) return;
+        if (player == null) return;
+        if (transform.position.x < player.transform.position.x && transform.localScale.x < 0) return;
         animator.SetBool("IsAttacking", true);
         canAttack = false;
         ThrowBomb();

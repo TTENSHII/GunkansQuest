@@ -36,5 +36,9 @@ public class Bomb : MonoBehaviour
             collision.collider.GetComponent<PlayerLife>().TakeDamage(damage);
             Explode();
         }
+        if (collision.collider.CompareTag("Ground") || collision.collider.CompareTag("Walls"))
+        {
+            Explode();
+        }
     }
 }
