@@ -125,7 +125,7 @@ public abstract class Enemies : MonoBehaviour
         }
     }
 
-    protected void OnDieAnimationEnd()
+    protected virtual void OnDieAnimationEnd()
     {
        Destroy(gameObject);
     }

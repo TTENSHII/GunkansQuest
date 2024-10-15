@@ -5,6 +5,7 @@ using UnityEngine;
 public class BigGuys : Enemies
 {
     [SerializeField] private GameObject bombPrefab = null;
+    [SerializeField] private GameObject keyPrefab = null;
     [SerializeField] private float guysScale = 1.617497f;
     [SerializeField] private float bombThrowForce = 10.0f;
 
@@ -14,6 +15,12 @@ public class BigGuys : Enemies
         Vector2 direction = (player.transform.position - transform.position).normalized;
         direction = new Vector2(direction.x, direction.y + 0.2f);
         bomb.GetComponent<Rigidbody2D>().velocity = direction * bombThrowForce;
+    }
+
+    protected override void OnDieAnimationEnd()
+    {
+        GameObject key = Instantiate(keyPrefab, transform.position, Quaternion.identity);
+        base.OnDieAnimationEnd();
     }
 
     protected override void Attack()

@@ -12,6 +12,7 @@ TagManager:
   - Weapons
   - UIManager
   - Collectible
+  - SceneLoader
   layers:
   - Default
   - TransparentFX
