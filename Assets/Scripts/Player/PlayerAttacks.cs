@@ -7,20 +7,20 @@ public class PlayerAttacks : MonoBehaviour
     [SerializeField] private AudioClip lightAttackSound = null;
     [SerializeField] private AudioClip heavyAttackSound = null;
     [SerializeField] private GameObject shuriKenPrefab = null;
-    [SerializeField] private AudioSource audioSource = null;
 
     [SerializeField] private float heavyAttackCooldown = 1.0f;
     [SerializeField] private float lightAttackCooldown = 0.3f;
     [SerializeField] private float shurikenThrowForce = 30.0f;
 
-    private Animator anim = null;
+    private AudioSource audioSource = null;
     private Inventory playerInventory = null;
+    private Animator anim = null;
     private bool canSwordAttack = true;
 
     private void Start()
     {
-        audioSource = GetComponent<AudioSource>();
         anim = GetComponent<Animator>();
+        audioSource = GetComponent<AudioSource>();
         playerInventory = GetComponent<Inventory>();
     }
 

@@ -19,13 +19,15 @@ public abstract class Enemies : MonoBehaviour
     protected PlayerMovements player = null;
     protected PlayerLife playerLife = null;
     protected FloatingHealthBar healthBar = null;
+    protected AudioSource audioSource = null;
 
     protected virtual void Start()
     {
-        animator = GetComponent<Animator>();
         rb = GetComponent<Rigidbody2D>();
-        player = FindObjectOfType<PlayerMovements>();
+        animator = GetComponent<Animator>();
+        audioSource = GetComponent<AudioSource>();
         playerLife = FindObjectOfType<PlayerLife>();
+        player = FindObjectOfType<PlayerMovements>();
         healthBar = GetComponentInChildren<FloatingHealthBar>();
         healthBar.UpdateHealthBar(health, maxHealth);
     }
@@ -113,6 +115,7 @@ public abstract class Enemies : MonoBehaviour
 
     public void ReceiveDamage(int damage)
     {
+        if (health <= 0) return;
         health -= damage;
         isStunned = true;
         rb.velocity = Vector2.zero;
@@ -122,6 +125,7 @@ public abstract class Enemies : MonoBehaviour
         {
             animator.SetBool("IsDead", true);
             rb.velocity = Vector2.zero;
+            audioSource.Play();
         }
     }
 

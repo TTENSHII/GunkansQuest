@@ -6,20 +6,23 @@ public class PlayerLife : MonoBehaviour
 {
     [SerializeField] private int life = 5;
     [SerializeField] private int maxLife = 5;
+    [SerializeField] private AudioClip takeDamageSound = null;
 
+    private AudioSource audioSource = null;
     private UIManager UIManager = null;
     private Animator anim = null;
 
     private void Start()
     {
         UIManager = GameObject.FindGameObjectWithTag("UIManager").GetComponent<UIManager>();
-        anim = GetComponent<Animator>();
         UIManager.UpdateLife(life);
+        anim = GetComponent<Animator>();
+        audioSource = GetComponent<AudioSource>();
     }
 
     public void TakeDamage(int damage)
     {
-        Debug.Log("Player took " + damage + " damage");
+        audioSource.PlayOneShot(takeDamageSound);
         life -= damage;
         anim.SetTrigger("TakeDamage");
         UIManager.UpdateLife(life);
