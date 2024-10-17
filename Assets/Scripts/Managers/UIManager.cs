@@ -7,18 +7,23 @@ using UnityEngine.UI;
 public class UIManager : MonoBehaviour
 {
     public TextMeshProUGUI ToolTipText = null;
-    public RawImage ToolTipBackground = null;
+    public GameObject ToolTipUiObject = null;
     public TextMeshProUGUI GoldText = null;
     public TextMeshProUGUI ShurikenText = null;
     public Image Life = null;
 
     void Start()
     {
-        ToolTipText.text = "";
+        ToolTipText.text = "fsfefs";
         GoldText.text = "0";
-        if (ToolTipBackground != null)
+        ChangeTooltipVisibility(false);
+    }
+    
+    private void ChangeTooltipVisibility(bool visible)
+    {
+        if (ToolTipUiObject != null)
         {
-            ToolTipBackground.enabled = false;
+            ToolTipUiObject.SetActive(visible);
         }
     }
 
@@ -35,19 +40,13 @@ public class UIManager : MonoBehaviour
     public void StopToolTip()
     {
         ToolTipText.text = "";
-        if (ToolTipBackground != null)
-        {
-            ToolTipBackground.enabled = false;
-        }
+        ChangeTooltipVisibility(false);
     }
 
     public void SetToolTipText(string text)
     {
         ToolTipText.text = text;
-        if (ToolTipBackground != null)
-        {
-            ToolTipBackground.enabled = true;
-        }
+        ChangeTooltipVisibility(true);
     }
 
     public void UpdateShurikenText(int shuriken)
