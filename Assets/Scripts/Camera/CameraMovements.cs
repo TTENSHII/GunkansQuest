@@ -4,8 +4,9 @@ using UnityEngine;
 
 public class CameraMovements : MonoBehaviour
 {
+    [SerializeField] private float yOffset = 2.0f;
+    
     private GameObject player = null;
-    private float yOffset = 2.0f;
 
     private void Start()
     {
