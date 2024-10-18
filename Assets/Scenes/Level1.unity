@@ -3358,6 +3358,14 @@ PrefabInstance:
       propertyPath: shuriken
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 99018744571132932, guid: 7da2552ec8d82624c87c2306c082799f, type: 3}
+      propertyPath: <gold>k__BackingField
+      value: 75
+      objectReference: {fileID: 0}
+    - target: {fileID: 99018744571132932, guid: 7da2552ec8d82624c87c2306c082799f, type: 3}
+      propertyPath: <shurikens>k__BackingField
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 6876207052254529310, guid: 7da2552ec8d82624c87c2306c082799f, type: 3}
       propertyPath: m_LocalPosition.x
       value: 39.878
@@ -4537,6 +4545,14 @@ PrefabInstance:
       propertyPath: gold
       value: 75
       objectReference: {fileID: 0}
+    - target: {fileID: 99018744571132932, guid: 7da2552ec8d82624c87c2306c082799f, type: 3}
+      propertyPath: <gold>k__BackingField
+      value: 25
+      objectReference: {fileID: 0}
+    - target: {fileID: 99018744571132932, guid: 7da2552ec8d82624c87c2306c082799f, type: 3}
+      propertyPath: <shurikens>k__BackingField
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 6876207052254529310, guid: 7da2552ec8d82624c87c2306c082799f, type: 3}
       propertyPath: m_LocalPosition.x
       value: 18.783
@@ -5509,6 +5525,14 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 99018744571132932, guid: 7da2552ec8d82624c87c2306c082799f, type: 3}
       propertyPath: shuriken
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 99018744571132932, guid: 7da2552ec8d82624c87c2306c082799f, type: 3}
+      propertyPath: <gold>k__BackingField
+      value: 50
+      objectReference: {fileID: 0}
+    - target: {fileID: 99018744571132932, guid: 7da2552ec8d82624c87c2306c082799f, type: 3}
+      propertyPath: <shurikens>k__BackingField
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6262076848365835327, guid: 7da2552ec8d82624c87c2306c082799f, type: 3}
@@ -7223,6 +7247,14 @@ PrefabInstance:
       propertyPath: shuriken
       value: 5
       objectReference: {fileID: 0}
+    - target: {fileID: 99018744571132932, guid: 7da2552ec8d82624c87c2306c082799f, type: 3}
+      propertyPath: <gold>k__BackingField
+      value: 125
+      objectReference: {fileID: 0}
+    - target: {fileID: 99018744571132932, guid: 7da2552ec8d82624c87c2306c082799f, type: 3}
+      propertyPath: <shurikens>k__BackingField
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 6876207052254529310, guid: 7da2552ec8d82624c87c2306c082799f, type: 3}
       propertyPath: m_LocalPosition.x
       value: 17.565773
@@ -8183,6 +8215,14 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 99018744571132932, guid: 7da2552ec8d82624c87c2306c082799f, type: 3}
       propertyPath: shuriken
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 99018744571132932, guid: 7da2552ec8d82624c87c2306c082799f, type: 3}
+      propertyPath: <gold>k__BackingField
+      value: 25
+      objectReference: {fileID: 0}
+    - target: {fileID: 99018744571132932, guid: 7da2552ec8d82624c87c2306c082799f, type: 3}
+      propertyPath: <shurikens>k__BackingField
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6876207052254529310, guid: 7da2552ec8d82624c87c2306c082799f, type: 3}
@@ -16764,6 +16804,10 @@ PrefabInstance:
     - target: {fileID: 99018744571132932, guid: 7da2552ec8d82624c87c2306c082799f, type: 3}
       propertyPath: gold
       value: 20
+      objectReference: {fileID: 0}
+    - target: {fileID: 99018744571132932, guid: 7da2552ec8d82624c87c2306c082799f, type: 3}
+      propertyPath: <gold>k__BackingField
+      value: 50
       objectReference: {fileID: 0}
     - target: {fileID: 6876207052254529310, guid: 7da2552ec8d82624c87c2306c082799f, type: 3}
       propertyPath: m_LocalPosition.x

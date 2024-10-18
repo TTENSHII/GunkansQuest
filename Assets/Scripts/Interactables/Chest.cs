@@ -4,17 +4,17 @@ using UnityEngine;
 
 public class Chest : MonoBehaviour , IInteractable
 {
-    public Sprite openSprite;
-    public Sprite closedSprite;
+    [SerializeField] private Sprite openSprite = null;
+    [SerializeField] private Sprite closedSprite = null;
+    [SerializeField] private AudioClip openSound = null;
 
-    public AudioClip openSound;
-    private AudioSource audioSource;
+    [field: SerializeField] public int gold { get; private set; } = 100;
+    [field: SerializeField] public int shurikens { get; private set; } = 2;
 
-    private SpriteRenderer spriteRenderer;
+    private AudioSource audioSource = null;
+    private SpriteRenderer spriteRenderer = null;
+
     private bool isOpen = false;
-
-    public int gold = 100;
-    public int shuriken = 2;
     
     private void Start()
     {
@@ -42,7 +42,7 @@ public class Chest : MonoBehaviour , IInteractable
         spriteRenderer.sprite = openSprite;
         GameObject player = GameObject.FindGameObjectWithTag("Player");
         player.GetComponent<Inventory>().AddGold(gold);
-        player.GetComponent<Inventory>().AddShuriken(shuriken);
+        player.GetComponent<Inventory>().AddShuriken(shurikens);
         isOpen = true;
         audioSource.PlayOneShot(openSound);
     }
