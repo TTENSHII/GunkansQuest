@@ -310,7 +310,9 @@ MonoBehaviour:
   lightAttackSound: {fileID: 8300000, guid: f45cef6d0e05fe744aeae5d3fcec4dbc, type: 3}
   heavyAttackSound: {fileID: 8300000, guid: 01fd149a576adc744ba3bffa950d63c9, type: 3}
   shuriKenPrefab: {fileID: 4359167317843209746, guid: 89c1c9c7f5295694e8f0635c1ef14cc4, type: 3}
-  attackCountDown: 0.2
+  heavyAttackCooldown: 1
+  lightAttackCooldown: 0.3
+  shurikenThrowForce: 30
 --- !u!114 &2650549131448412922
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -323,8 +325,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6042fc9598789324eb80bfdfc62a3df7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  gold: 0
-  shurikens: 5
+  <gold>k__BackingField: 0
+  <shurikens>k__BackingField: 0
+  <haveLevel1Key>k__BackingField: 0
 --- !u!114 &3057383129869735721
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -337,3 +340,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0a0f42ef88074da46a4c2d15ce7cd259, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  life: 5
+  maxLife: 5
+  takeDamageSound: {fileID: 8300000, guid: 3f9b985dc5a83e94cbe0b45dda987282, type: 3}
