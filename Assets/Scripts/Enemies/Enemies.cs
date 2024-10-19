@@ -111,6 +111,7 @@ public abstract class Enemies : MonoBehaviour
     {
         isStunned = false;
         animator.SetBool("IsTakingDamage", false);
+        animator.SetBool("IsAttacking", false);
     }
 
     public void ReceiveDamage(int damage)
