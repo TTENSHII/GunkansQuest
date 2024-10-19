@@ -13,8 +13,4 @@ public class SoundManager : MonoBehaviour
         audioSource = GetComponent<AudioSource>();
         audioSource.PlayOneShot(levelMusic);
     }
-
-    private void Update()
-    {
-    }
 }
