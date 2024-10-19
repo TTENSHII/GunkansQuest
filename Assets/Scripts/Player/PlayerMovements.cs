@@ -11,7 +11,6 @@ public class PlayerMovements : MonoBehaviour
     private Rigidbody2D rb = null;
     private Vector3 spriteScale = Vector3.zero;
 
-    private bool isGrounded = false;
     private bool isJumping = false;
 
     private void Start()
@@ -23,7 +22,7 @@ public class PlayerMovements : MonoBehaviour
 
     private bool CanJump()
     {
-        if (rb.velocity.y <= 0.001f && rb.velocity.y >= -0.001f && isGrounded)
+        if (rb.velocity.y <= 0.001f && rb.velocity.y >= -0.001f)
         {
             return true;
         }
@@ -64,20 +63,11 @@ public class PlayerMovements : MonoBehaviour
     {
         if (collision.gameObject.CompareTag("Ground"))
         {
-            isGrounded = true;
             if (isJumping)
             {
                 anim.SetBool("IsJumping", false);
                 isJumping = false;
             }
-        }
-    }
-
-    private void OnCollisionExit2D(Collision2D collision)
-    {
-        if (collision.gameObject.CompareTag("Ground"))
-        {
-            isGrounded = false;
         }
     }
 }

@@ -36,5 +36,11 @@ public class Bullet : MonoBehaviour
         {
             Explode(collision);
         }
+        else if (collision.gameObject.CompareTag("Enemy"))
+        {
+            Enemies enemy = collision.gameObject.GetComponent<Enemies>();
+            enemy.ReceiveDamage(2);
+            Explode(collision);
+        }
     }
 }
