@@ -6,7 +6,7 @@ public class Key : Collectibles
 {
     public override void Pickup(Inventory playerInventory)
     {
-        playerInventory.haveLevel1Key = true;
+        playerInventory.haveLevelKey = true;
         base.Pickup(playerInventory);
     }
 }

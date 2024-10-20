@@ -7,7 +7,7 @@ public class Pirate : MonoBehaviour , IInteractable
     public bool CanInteract()
     {
         GameObject player = GameObject.FindGameObjectWithTag("Player");
-        if (player.GetComponent<Inventory>().haveLevel1Key)
+        if (player.GetComponent<Inventory>().haveLevelKey)
         {
             return true;
         }

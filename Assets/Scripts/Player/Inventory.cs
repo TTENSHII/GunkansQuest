@@ -6,7 +6,7 @@ public class Inventory : MonoBehaviour
 {
     [field: SerializeField] public int gold { get; private set; } = 0;
     [field: SerializeField] public int shurikens { get; private set; } = 0;
-    [field: SerializeField] public bool haveLevel1Key { get; set; } = false;
+    [field: SerializeField] public bool haveLevelKey { get; set; } = false;
 
     private UIManager UIManager = null;
     private IInteractable currentInteractable = null;

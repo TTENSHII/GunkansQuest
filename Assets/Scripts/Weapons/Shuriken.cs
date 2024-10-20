@@ -2,9 +2,16 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+public enum WeaponAppartenance
+{
+    Player,
+    Enemy
+}
+
 public class Shuriken : MonoBehaviour
 {
     [SerializeField] private AudioClip shurikenSound = null;
+    [SerializeField] private WeaponAppartenance weaponAppartenance = WeaponAppartenance.Player;
 
     private Rigidbody2D rb = null;
     private Animator animator = null;
@@ -26,10 +33,14 @@ public class Shuriken : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.CompareTag("Enemy"))
+        if (weaponAppartenance == WeaponAppartenance.Player && collision.CompareTag("Enemy"))
         {
             Enemies Enemy = collision.GetComponent<Enemies>();
             Enemy.ReceiveDamage(1);
+        } else if (weaponAppartenance == WeaponAppartenance.Enemy && collision.CompareTag("Player"))
+        {
+            PlayerLife playerLife = collision.GetComponent<PlayerLife>();
+            playerLife.TakeDamage(1);
         }
         Destroy(gameObject);
     }

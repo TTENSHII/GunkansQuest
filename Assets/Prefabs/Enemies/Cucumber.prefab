@@ -294,7 +294,7 @@ MonoBehaviour:
   maxHealth: 3
   health: 3
   attackDamage: 1
-  speed: 2
+  speed: 3
   attackRange: 1.8
   attackCountdown: 0.5
 --- !u!1 &5294368159158143407
