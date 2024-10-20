@@ -6,11 +6,18 @@ using UnityEngine;
 
 public class SettingsMenu : MonoBehaviour
 {
-    [SerializeField] private AudioMixer audioMixer = null;
-    [SerializeField] private Slider volumeSlider = null;
+    [SerializeField] private AudioMixer musicMixer = null;
+    [SerializeField] private AudioMixer soundEffectMixer = null;
+    [SerializeField] private Slider musicVolumeSlider = null;
+    [SerializeField] private Slider soundEffectVolumeSlider = null;
 
-    public void SetVolume()
+    public void SetMusicVolume()
     {
-        audioMixer.SetFloat("Volume", volumeSlider.value * 80 - 80);
+        musicMixer.SetFloat("MusicVolume", musicVolumeSlider.value * 80 - 80);
+    }
+
+    public void SetSoundEffectVolume()
+    {
+        soundEffectMixer.SetFloat("SEVolume", soundEffectVolumeSlider.value * 80 - 80);
     }
 }
