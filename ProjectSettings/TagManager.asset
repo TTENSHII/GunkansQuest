@@ -13,6 +13,7 @@ TagManager:
   - UIManager
   - Collectible
   - SceneLoader
+  - SettingsMenu
   layers:
   - Default
   - TransparentFX
