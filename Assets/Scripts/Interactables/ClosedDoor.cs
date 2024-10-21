@@ -38,7 +38,7 @@ public class ClosedDoor : MonoBehaviour , IInteractable
     public void Interact()
     {
         audioSource.Play();
-        animator.Play(openDoorAnimation.name);
+        animator.SetTrigger("OpenDoor");
         Invoke("LoadNextLevel", openDoorAnimation.length);
     }
 }
