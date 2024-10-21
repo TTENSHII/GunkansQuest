@@ -30,6 +30,11 @@ public class SceneLoader : MonoBehaviour
         UnityEngine.SceneManagement.SceneManager.LoadScene("GameOver");
     }
 
+    public void LoadEndGame()
+    {
+        UnityEngine.SceneManagement.SceneManager.LoadScene("EndGameScreen");
+    }
+
     public void ExitGame()
     {
         Application.Quit();
