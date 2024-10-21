@@ -11,14 +11,34 @@ public class SettingsMenu : MonoBehaviour
     [SerializeField] private Slider musicVolumeSlider = null;
     [SerializeField] private Slider soundEffectVolumeSlider = null;
 
+    void Start()
+    {
+        float savedMusicVolume = PlayerPrefs.GetFloat("MusicVolume", 0.0f);
+        float savedSEVolume = PlayerPrefs.GetFloat("SEVolume", 0.0f);
+
+        musicVolumeSlider.value = savedMusicVolume;
+        soundEffectVolumeSlider.value = savedSEVolume;
+
+        SetMusicVolume();
+        SetSoundEffectVolume();
+    }
+
     public void SetMusicVolume()
     {
-        musicMixer.SetFloat("MusicVolume", musicVolumeSlider.value * 80 - 80);
+        float musicVolume = musicVolumeSlider.value * 80 - 80;
+        musicMixer.SetFloat("MusicVolume", musicVolume);
+
+        PlayerPrefs.SetFloat("MusicVolume", musicVolumeSlider.value);
+        PlayerPrefs.Save();
     }
 
     public void SetSoundEffectVolume()
     {
-        soundEffectMixer.SetFloat("SEVolume", soundEffectVolumeSlider.value * 80 - 80);
+        float seVolume = soundEffectVolumeSlider.value * 80 - 80;
+        soundEffectMixer.SetFloat("SEVolume", seVolume);
+
+        PlayerPrefs.SetFloat("SEVolume", soundEffectVolumeSlider.value);
+        PlayerPrefs.Save();
     }
 
     public void SetFullScreen()
