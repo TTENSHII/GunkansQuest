@@ -5,6 +5,14 @@ Play as Gunkans, defeat all the enemies on the island to win.
 This project is my first unity project, made for our mid-semester exam.
 
 # Images
+![Level 1](Images/Level1.png)
+![Secret Passage](Images/SecretPassage.png)
+![Big Guy](Images/BigGuy.png)
+![Level 2](Images/Level2.png)
+![Cannons](Images/Cannons.png)
+![Main Menu](Images/MainMenu.png)
+![Merchants](Images/Merchands.png)
+![Settings](Images/Settings.png)
 
 # Features listing
 
