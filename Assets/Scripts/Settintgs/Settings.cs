@@ -13,12 +13,6 @@ public class SettingsMenu : MonoBehaviour
 
     void Start()
     {
-        float savedMusicVolume = PlayerPrefs.GetFloat("MusicVolume", 0.0f);
-        float savedSEVolume = PlayerPrefs.GetFloat("SEVolume", 0.0f);
-
-        musicVolumeSlider.value = savedMusicVolume;
-        soundEffectVolumeSlider.value = savedSEVolume;
-
         SetMusicVolume();
         SetSoundEffectVolume();
     }

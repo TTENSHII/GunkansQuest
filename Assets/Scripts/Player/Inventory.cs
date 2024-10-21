@@ -14,6 +14,7 @@ public class Inventory : MonoBehaviour
     void Start()
     {
         UIManager = GameObject.FindGameObjectWithTag("UIManager").GetComponent<UIManager>();
+        LoadInventory();
         UpdateUI();
     }
 
@@ -25,6 +26,19 @@ public class Inventory : MonoBehaviour
             currentInteractable = null;
             UIManager.StopToolTip();
         }
+    }
+
+    private void SaveInventory()
+    {
+        PlayerPrefs.SetInt("Gold", gold);
+        PlayerPrefs.SetInt("Shurikens", shurikens);
+        PlayerPrefs.Save();
+    }
+
+    private void LoadInventory()
+    {
+        gold = PlayerPrefs.GetInt("Gold", 0);
+        shurikens = PlayerPrefs.GetInt("Shurikens", 5);
     }
 
     private void UpdateGoldText() 
@@ -47,24 +61,28 @@ public class Inventory : MonoBehaviour
     {
         gold += amount;
         UpdateGoldText();
+        SaveInventory();
     }
     
     public void RemoveGold(int amount)
     {
         gold -= amount;
         UpdateGoldText();
+        SaveInventory();
     }
 
     public void AddShuriken(int amount)
     {
         shurikens += amount;
         UpdateShurikenText();
+        SaveInventory();
     }
 
     public void RemoveShuriken(int amount)
     {
         shurikens -= amount;
         UpdateShurikenText();
+        SaveInventory();
     }
 
     private void OnTriggerEnter2D(Collider2D collision)

@@ -14,8 +14,7 @@ public class UIManager : MonoBehaviour
 
     void Start()
     {
-        ToolTipText.text = "fsfefs";
-        GoldText.text = "0";
+        ToolTipText.text = "";
         ChangeTooltipVisibility(false);
     }
     
