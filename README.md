@@ -1,3 +1,11 @@
+# Gunkan's quest
+
+Play as Gunkans, defeat all the enemies on the island to win.
+
+This project is my first unity project, made for our mid-semester exam.
+
+# Images
+
 # Features listing
 
 ## Player:
@@ -10,7 +18,7 @@
 
 ## Enemies:
 - More than 5 different enemies and 3 unique bosses.
-- Bosses have special patterns, like throwing objects, summoning spikes, etc.
+- Bosses have special patterns, like throwing or summoning objects, etc.
 - Enemies can move and attack the player.
 - The player takes damage upon colliding with enemies.
 
@@ -28,6 +36,7 @@
 - **Dynamic environment**: Animations like water, flags, etc., to create a lively atmosphere.
 - **Secret chests**: Contain items like shurikens and coins.
 - **Collectibles**: Provide coins or health regeneration.
+- **Platforms**: The player can jump on them to reach higher areas.
 
 ## Scenes:
 - **Main menu**: Start the game, change settings, or quit.
@@ -48,10 +57,10 @@
 - Item shop.
 - Pause menu.
 - Settings menu.
+- How to play menu.
 - Interaction tooltips.
 - Option to switch between fullscreen and windowed mode.
 - Resolution settings.
-
 
 
 # Assets
