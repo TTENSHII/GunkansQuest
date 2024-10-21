@@ -15,6 +15,7 @@ TagManager:
   - SceneLoader
   - SettingsMenu
   - ItemShop
+  - Canvas
   layers:
   - Default
   - TransparentFX

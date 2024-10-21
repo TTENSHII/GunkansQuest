@@ -123,6 +123,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   shurikenSound: {fileID: 8300000, guid: 90bc12014f08879408ec7b975b3f209f, type: 3}
+  weaponAppartenance: 0
 --- !u!50 &8387113929624334086
 Rigidbody2D:
   serializedVersion: 4
@@ -194,7 +195,7 @@ AudioSource:
   m_GameObject: {fileID: 4359167317843209746}
   m_Enabled: 1
   serializedVersion: 4
-  OutputAudioMixerGroup: {fileID: 0}
+  OutputAudioMixerGroup: {fileID: 24300002, guid: 26ffb3c71f2347c46bf0f765fecb19d7, type: 2}
   m_audioClip: {fileID: 0}
   m_PlayOnAwake: 0
   m_Volume: 1
