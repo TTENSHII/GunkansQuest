@@ -10,7 +10,10 @@ public class ResetSettingsOnStart : MonoBehaviour
 
     public void Start()
     {
-        ResetSoundsSliders();
+        if (musicVolumeSlider != null && soundEffectVolumeSlider != null)
+        {
+            ResetSoundsSliders();
+        }
     }
 
     public void ResetPlayerInventory()
